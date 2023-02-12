@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Testfall2" name="Essensauswahl" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_07ujgi7" name="Essenvariante">
+    <informationRequirement id="InformationRequirement_16sazwl">
+      <requiredInput href="#InputData_0n4g549" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_046yorc">
+      <requiredInput href="#InputData_0bnimdp" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0nj0jfc">
+      <requiredInput href="#InputData_0cxli30" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0na4gh6">
+      <requiredInput href="#InputData_18ki12o" />
+    </informationRequirement>
+    <decisionTable id="decisionTable_0zbltxh">
+      <input id="InputClause_134sofa" label="Allergien">
+        <inputExpression id="LiteralExpression_1ym8w7z" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_11dhwl0" label="Konsumiert Fleisch">
+        <inputExpression id="LiteralExpression_061cf7c" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_104hv97" label="Konsumiert Fisch">
+        <inputExpression id="LiteralExpression_07du6d3" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="input1" label="">
+        <inputExpression id="inputExpression1" typeRef="boolean">
+          <text>Konsumiert Milchprodukte</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Essensvariante " name="" typeRef="string">
+        <outputValues id="UnaryTests_1rpya22">
+          <text>"Vegan","Vegetarisch","Prescetarier","Fleisch","Extra Nachfragen"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_08uvjx2">
+        <inputEntry id="UnaryTests_08jyeae">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v74zdx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cpcww8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njqc2h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0feljtu">
+          <text>"Extra Nachfragen"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_119wwzo">
+        <inputEntry id="UnaryTests_00a18eh">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f6ad14">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n4axy4">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ptepo">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zntgkf">
+          <text>"Vegetarisch"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pp0fzd">
+        <inputEntry id="UnaryTests_14tcv1o">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ytfaeb">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yehddn">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07r070k">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xd56gz">
+          <text>"Prescetarier"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zcys6n">
+        <inputEntry id="UnaryTests_08wb1bk">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1svpnia">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04utu1s">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u08lvl">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s0j5pr">
+          <text>"Vegetarisch"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uxbhne">
+        <inputEntry id="UnaryTests_0fd7nxs">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rjazti">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jixmnf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05ig20r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ialmq3">
+          <text>"Fleisch"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cgds71">
+        <inputEntry id="UnaryTests_0adzaz0">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mctfji">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cldmuz">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15m94n8">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03h64ap">
+          <text>"Vegan"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0n4g549" name="Konsumiert Fleisch" />
+  <inputData id="InputData_0bnimdp" name="Konsumiert Fisch" />
+  <inputData id="InputData_0cxli30" name="Konsumiert Milchprodukte" />
+  <inputData id="InputData_18ki12o" name="Allergien?" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0e2xsxw">
+      <dmndi:DMNShape id="DMNShape_1rkertf" dmnElementRef="decision_07ujgi7">
+        <dc:Bounds height="80" width="180" x="460" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0xrayff" dmnElementRef="InputData_0n4g549">
+        <dc:Bounds height="45" width="125" x="398" y="307" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_111ld5p" dmnElementRef="InformationRequirement_16sazwl">
+        <di:waypoint x="461" y="307" />
+        <di:waypoint x="532" y="180" />
+        <di:waypoint x="532" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0b0lfpp" dmnElementRef="InputData_0bnimdp">
+        <dc:Bounds height="45" width="125" x="587" y="307" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0lb7izs" dmnElementRef="InformationRequirement_046yorc">
+        <di:waypoint x="650" y="307" />
+        <di:waypoint x="568" y="180" />
+        <di:waypoint x="568" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1fntrm4" dmnElementRef="InputData_0cxli30">
+        <dc:Bounds height="45" width="125" x="158" y="297" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1p2ehz4" dmnElementRef="InformationRequirement_0nj0jfc">
+        <di:waypoint x="221" y="297" />
+        <di:waypoint x="496" y="180" />
+        <di:waypoint x="496" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1a34sx3" dmnElementRef="InputData_18ki12o">
+        <dc:Bounds height="45" width="125" x="797" y="307" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0g2hjrf" dmnElementRef="InformationRequirement_0na4gh6">
+        <di:waypoint x="860" y="307" />
+        <di:waypoint x="604" y="180" />
+        <di:waypoint x="604" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

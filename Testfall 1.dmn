@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Testfall1" name="Getränkeauswahl" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_0aye79z" name="Getränke">
+    <informationRequirement id="InformationRequirement_10qbj3l">
+      <requiredInput href="#InputData_0bpbx4g" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1h95e93">
+      <requiredDecision href="#Decision_0m4cgjx" />
+    </informationRequirement>
+    <decisionTable id="decisionTable_1kiodw9">
+      <input id="input1" label="Mahlzeit">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1hcdrdq">
+          <text>"Spargel","Salat","Steak","Gulasch"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0ut3cos" label="Kinder anwesend?">
+        <inputExpression id="LiteralExpression_1bd9698" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Getränke" name="" typeRef="string">
+        <outputValues id="UnaryTests_0wkrz53">
+          <text>"alkoholische Getränke","nicht alkoholische Getränke"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0bnih0x">
+        <inputEntry id="UnaryTests_1bg4b6h">
+          <text>"Spargel","Salat","Steak","Gulasch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jfeavi">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0int6j5">
+          <text>"nicht alkoholische Getränke"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17scy92">
+        <inputEntry id="UnaryTests_1q6qm5e">
+          <text>"Spargel","Salat","Steak","Gulasch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07xx0q9">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lwu2ae">
+          <text>"alkoholische Getränke"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0bpbx4g" name="Kinder anwesend?" />
+  <inputData id="InputData_04zpvz0" name="Jahreszeit" />
+  <decision id="Decision_0m4cgjx" name="Mahlzeit">
+    <informationRequirement id="InformationRequirement_0t91wi6">
+      <requiredInput href="#InputData_04zpvz0" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_15utlov">
+      <input id="InputClause_1jiqs53" label="Jahreszeit">
+        <inputExpression id="LiteralExpression_0q0k4pn" typeRef="string" />
+        <inputValues id="UnaryTests_0t05ylc">
+          <text>"Frühling","Sommer","Herbst","Winter"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_1dhd8t3" label="Mahlzeit" typeRef="string">
+        <outputValues id="UnaryTests_089laa6">
+          <text>"Spargel","Salat","Steak","Gulasch"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0354ev6">
+        <inputEntry id="UnaryTests_0koe6n5">
+          <text>"Frühling"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vr6mlq">
+          <text>"Spargel"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h0ofig">
+        <inputEntry id="UnaryTests_1g034r5">
+          <text>"Sommer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ji92js">
+          <text>"Salat"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06y8ujv">
+        <inputEntry id="UnaryTests_1i6oq0p">
+          <text>"Herbst"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uxpxxp">
+          <text>"Steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02a1qd1">
+        <inputEntry id="UnaryTests_1kmlh2e">
+          <text>"Winter"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05uq3pk">
+          <text>"Gulasch"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1ky23fj">
+      <dmndi:DMNShape id="DMNShape_0ko888j" dmnElementRef="decision_0aye79z">
+        <dc:Bounds height="80" width="180" x="230" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0uzawle" dmnElementRef="InputData_0bpbx4g">
+        <dc:Bounds height="45" width="125" x="427" y="267" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1kkh1st" dmnElementRef="InputData_04zpvz0">
+        <dc:Bounds height="45" width="125" x="227" y="418" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1aohghh" dmnElementRef="InformationRequirement_0t91wi6">
+        <di:waypoint x="290" y="418" />
+        <di:waypoint x="290" y="350" />
+        <di:waypoint x="290" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1f12hk1" dmnElementRef="InformationRequirement_10qbj3l">
+        <di:waypoint x="490" y="267" />
+        <di:waypoint x="350" y="180" />
+        <di:waypoint x="350" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_19np6p7" dmnElementRef="InformationRequirement_1h95e93">
+        <di:waypoint x="290" y="250" />
+        <di:waypoint x="290" y="180" />
+        <di:waypoint x="290" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_12u24a1" dmnElementRef="Decision_0m4cgjx">
+        <dc:Bounds height="80" width="180" x="200" y="250" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
