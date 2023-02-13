@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Testfall5" name="Urlaubsort" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_0fcds27" name="Urlaubsort">
+    <informationRequirement id="InformationRequirement_1ht10um">
+      <requiredDecision href="#Decision_0f4vrj1" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_12w948x">
+      <requiredInput href="#InputData_0ndz8f2" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1u6hdxa">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0xddnkk" />
+    </knowledgeRequirement>
+    <decisionTable id="decisionTable_1gygv0e">
+      <input id="input1" label="Erschöüfungsgrad">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0p0gks7">
+          <text>"gering","mittel","hoch"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_14ij43o" label="offene Urlaubstage">
+        <inputExpression id="LiteralExpression_16k9hkr" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0i7xn60">
+          <text>"gering","mittel","hoch"</text>
+        </inputValues>
+      </input>
+      <output id="output1" label="Urlaubsort" name="" typeRef="string">
+        <outputValues id="UnaryTests_0k8edcr">
+          <text>"Urlaub auf den Balkon","Wellnesswochenende","verlängertes Wochende","Backpacking","Weltreise","Strandurlaub"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0m3q0n8">
+        <inputEntry id="UnaryTests_1h4ftda">
+          <text>"gering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x98qzf">
+          <text>"gering"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a940zc">
+          <text>"Urlaub auf den Balkon"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u8414d">
+        <inputEntry id="UnaryTests_06ybqs2">
+          <text>"gering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19tu0id">
+          <text>"mittel"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06om8ao">
+          <text>"Wellnesswochenende"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_058fjpv">
+        <inputEntry id="UnaryTests_0a3sea6">
+          <text>"gering"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pjbzqq">
+          <text>"hoch"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sftpor">
+          <text>"verlängertes Wochende"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1laa8yb">
+        <inputEntry id="UnaryTests_1oc89yf">
+          <text>"mittel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t9komy">
+          <text>"gering"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fqiinm">
+          <text>"verlängertes Wochende"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yg4twh">
+        <inputEntry id="UnaryTests_1xl1pm7">
+          <text>"mittel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_030cq1g">
+          <text>"mittel"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f2vidh">
+          <text>"Strandurlaub"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zbfvvk">
+        <inputEntry id="UnaryTests_057yvag">
+          <text>"mittel"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xuuquv">
+          <text>"hoch"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18twt7x">
+          <text>"Backpacking"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zbnik0">
+        <inputEntry id="UnaryTests_11kneva">
+          <text>"hoch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hsgcju">
+          <text>"gering"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gt4fxs">
+          <text>"Wellnesswochenende"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xc7ykp">
+        <inputEntry id="UnaryTests_0pag99i">
+          <text>"hoch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04iyuwf">
+          <text>"mittel"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dsz08y">
+          <text>"Strandurlaub"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hpve19">
+        <inputEntry id="UnaryTests_0ygcmhj">
+          <text>"hoch"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d19d8j">
+          <text>"hoch"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vizu69">
+          <text>"Weltreise"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0xddnkk" name="Urlaubsregelung" />
+  <decision id="Decision_0f4vrj1" name="Erschöpfungsgrad">
+    <informationRequirement id="InformationRequirement_130piqw">
+      <requiredInput href="#InputData_0rv8c8e" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1z0y1zm">
+      <requiredKnowledge href="#BusinessKnowledgeModel_18ta2oj" />
+    </knowledgeRequirement>
+  </decision>
+  <inputData id="InputData_0ndz8f2" name="Urlaubstage" />
+  <inputData id="InputData_0rv8c8e" name="Letzter Urlaub" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_18ta2oj" name="Kategoriekatalog" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_04kds3s">
+      <dmndi:DMNShape id="DMNShape_0u85yyf" dmnElementRef="decision_0fcds27">
+        <dc:Bounds height="80" width="180" x="490" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1q3r42s" dmnElementRef="BusinessKnowledgeModel_0xddnkk">
+        <dc:Bounds height="46" width="135" x="763" y="97" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1xukyl5" dmnElementRef="KnowledgeRequirement_1u6hdxa">
+        <di:waypoint x="763" y="120" />
+        <di:waypoint x="670" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1wfpxr7" dmnElementRef="Decision_0f4vrj1">
+        <dc:Bounds height="80" width="180" x="390" y="250" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1271fqy" dmnElementRef="InformationRequirement_1ht10um">
+        <di:waypoint x="480" y="250" />
+        <di:waypoint x="550" y="180" />
+        <di:waypoint x="550" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1w3l3p3" dmnElementRef="InputData_0ndz8f2">
+        <dc:Bounds height="45" width="125" x="638" y="268" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_06ut2t7" dmnElementRef="InformationRequirement_12w948x">
+        <di:waypoint x="701" y="268" />
+        <di:waypoint x="610" y="180" />
+        <di:waypoint x="610" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_17u8bqg" dmnElementRef="InputData_0rv8c8e">
+        <dc:Bounds height="45" width="125" x="417" y="427" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1h9i0g7" dmnElementRef="InformationRequirement_130piqw">
+        <di:waypoint x="480" y="427" />
+        <di:waypoint x="480" y="350" />
+        <di:waypoint x="480" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0hzeyen" dmnElementRef="BusinessKnowledgeModel_18ta2oj">
+        <dc:Bounds height="46" width="135" x="153" y="267" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0kn3fw3" dmnElementRef="KnowledgeRequirement_1z0y1zm">
+        <di:waypoint x="288" y="290" />
+        <di:waypoint x="390" y="290" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

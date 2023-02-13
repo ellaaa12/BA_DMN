@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Testfall6" name="Versandkosten" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_1hfqnb0" name="Versandkosten">
+    <informationRequirement id="InformationRequirement_0ajz4ps">
+      <requiredInput href="#InputData_0d4mngk" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_02gelgo">
+      <requiredInput href="#InputData_198lqrx" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0wyh91g">
+      <requiredInput href="#InputData_0r7fspi" />
+    </informationRequirement>
+    <decisionTable id="decisionTable_1wzxkld" hitPolicy="FIRST">
+      <input id="input1" label="Bestellwert">
+        <inputExpression id="inputExpression1" typeRef="number">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1sdp85h" label="Nur Bücher?">
+        <inputExpression id="LiteralExpression_1ghnxrn" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_06f4dg0" label="Premiumkunde?">
+        <inputExpression id="LiteralExpression_01gny2g" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Versandkosten" name="" typeRef="boolean" />
+      <rule id="DecisionRule_0m4aoan">
+        <inputEntry id="UnaryTests_12n2zg7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xh004u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r3vqij">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sallx6">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09p0mz2">
+        <inputEntry id="UnaryTests_0bamod6">
+          <text>&gt;=100.00</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s92a7d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zgw83n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z5cqb3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02xhqx8">
+        <inputEntry id="UnaryTests_0sk1x1w">
+          <text>&gt;=50.00</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0esdqst">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0etamwu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s02au2">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nnznv7">
+        <inputEntry id="UnaryTests_152n046">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lokrxt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19lhy76">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vm03az">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0r7fspi" name="Nur Bücher?" />
+  <inputData id="InputData_198lqrx" name="Premiumkunde?" />
+  <inputData id="InputData_0d4mngk" name="Bestellwert" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0lhktof">
+      <dmndi:DMNShape id="DMNShape_101xi0j" dmnElementRef="decision_1hfqnb0">
+        <dc:Bounds height="80" width="180" x="280" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1nj896r" dmnElementRef="InputData_0r7fspi">
+        <dc:Bounds height="45" width="125" x="157" y="237" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_17q7iox" dmnElementRef="InputData_198lqrx">
+        <dc:Bounds height="45" width="125" x="307" y="237" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0rwwd4w" dmnElementRef="InputData_0d4mngk">
+        <dc:Bounds height="45" width="125" x="467" y="237" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1mrp82j" dmnElementRef="InformationRequirement_0ajz4ps">
+        <di:waypoint x="530" y="237" />
+        <di:waypoint x="415" y="180" />
+        <di:waypoint x="415" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_13okd8d" dmnElementRef="InformationRequirement_02gelgo">
+        <di:waypoint x="370" y="237" />
+        <di:waypoint x="370" y="180" />
+        <di:waypoint x="370" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0sg7ge6" dmnElementRef="InformationRequirement_0wyh91g">
+        <di:waypoint x="220" y="237" />
+        <di:waypoint x="325" y="180" />
+        <di:waypoint x="325" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

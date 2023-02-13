@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Testfall3" name="Erteilung einer Kredidkarte" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_0o3nck6" name="Basisentscheidung über die Erteilung einer Kreditkarte">
+    <informationRequirement id="InformationRequirement_1sxhl7z">
+      <requiredInput href="#InputData_06o90rz" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dmnl0p">
+      <requiredInput href="#InputData_1gp9l5m" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1c8xdsr">
+      <requiredKnowledge href="#BusinessKnowledgeModel_1ouwcdn" />
+    </knowledgeRequirement>
+    <decisionTable id="decisionTable_1bhurhp">
+      <input id="input1" label="Alter des Antragstellers">
+        <inputExpression id="inputExpression1" typeRef="number">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1hh4fpg" label="Beschäftigungsstatus Angestellter">
+        <inputExpression id="LiteralExpression_066hlkr" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0c5hat8">
+          <text>"Beschäftigt","Arbeitssuchend"</text>
+        </inputValues>
+      </input>
+      <output id="output1" label="Entscheidunng über Erteilung einer Kreditkarte" name="" typeRef="boolean" />
+      <rule id="DecisionRule_0gc9qpx">
+        <inputEntry id="UnaryTests_0i4zhs8">
+          <text>&lt;18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zgtyek">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yj5h6p">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kgc8wb">
+        <inputEntry id="UnaryTests_1aj9y52">
+          <text>[18..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hic7nj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vve5fh">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0u8c399">
+        <inputEntry id="UnaryTests_0tn5d3h">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qax0gc">
+          <text>"Beschäftigt"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1j2g0hb">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rllfuq">
+        <inputEntry id="UnaryTests_0f698rb">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02da3wf">
+          <text>"Arbeitssuchend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c6g3wo">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jbcqzc">
+        <inputEntry id="UnaryTests_1tvtjkd">
+          <text>&gt;65</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rye6wj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1buoyqy">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1gp9l5m" name="Alter des Antragstellers" />
+  <inputData id="InputData_06o90rz" name="Beschäftigungsstatus des Antragstellers" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_1ouwcdn" name="Geschäftsregeln       für die Erteilung einer Kreditkarte">
+    <authorityRequirement id="AuthorityRequirement_0lsexkr">
+      <requiredAuthority href="#KnowledgeSource_0p7okm7" />
+    </authorityRequirement>
+    <authorityRequirement id="AuthorityRequirement_138g90u">
+      <requiredAuthority href="#KnowledgeSource_01gmvec" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <knowledgeSource id="KnowledgeSource_0p7okm7" name="Geschäftsgrundsätze" />
+  <knowledgeSource id="KnowledgeSource_01gmvec" name="Rechts-             dokument §38 ff." />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0ecoojw">
+      <dmndi:DMNShape id="DMNShape_0wxk9uo" dmnElementRef="decision_0o3nck6">
+        <dc:Bounds height="80" width="180" x="150" y="90" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1t17k1o" dmnElementRef="InputData_1gp9l5m">
+        <dc:Bounds height="45" width="125" x="117" y="267" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1930h8v" dmnElementRef="InputData_06o90rz">
+        <dc:Bounds height="45" width="125" x="257" y="267" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_09xktr6" dmnElementRef="BusinessKnowledgeModel_1ouwcdn">
+        <dc:Bounds height="46" width="135" x="443" y="107" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0agtyhv" dmnElementRef="KnowledgeSource_0p7okm7">
+        <dc:Bounds height="63" width="100" x="640" y="79" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0wdjg3s" dmnElementRef="KnowledgeSource_01gmvec">
+        <dc:Bounds height="63" width="100" x="640" y="189" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1o15dgu" dmnElementRef="KnowledgeRequirement_1c8xdsr">
+        <di:waypoint x="443" y="130" />
+        <di:waypoint x="330" y="130" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1ipdor4" dmnElementRef="AuthorityRequirement_0lsexkr">
+        <di:waypoint x="640" y="115" />
+        <di:waypoint x="580" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_140gh5b" dmnElementRef="AuthorityRequirement_138g90u">
+        <di:waypoint x="648" y="189" />
+        <di:waypoint x="578" y="136" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1481zm7" dmnElementRef="InformationRequirement_1sxhl7z">
+        <di:waypoint x="320" y="267" />
+        <di:waypoint x="270" y="190" />
+        <di:waypoint x="270" y="170" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1j5kot0" dmnElementRef="InformationRequirement_1dmnl0p">
+        <di:waypoint x="180" y="267" />
+        <di:waypoint x="210" y="190" />
+        <di:waypoint x="210" y="170" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

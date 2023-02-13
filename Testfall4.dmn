@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Testfall4" name="Honig Eigenbedarf" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_0bs4d6s" name="Honig Eigenbedarf">
+    <informationRequirement id="InformationRequirement_1sfbzuj">
+      <requiredDecision href="#Decision_1lyiq2k" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1br65yu">
+      <requiredInput href="#InputData_0iatjxo" />
+    </informationRequirement>
+    <decisionTable id="decisionTable_075q50q">
+      <input id="input1" label="Zustand der Bienenkolonie" biodi:width="231">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0i0j2mc">
+          <text>"gut","mäßig","schlecht"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0086lmr" label="Wetter">
+        <inputExpression id="LiteralExpression_1tguc5z" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1a16v4l">
+          <text>"gut","mäßig","schlecht"</text>
+        </inputValues>
+      </input>
+      <output id="output1" label="Honig Eigenbedarf" typeRef="string" />
+      <rule id="DecisionRule_0h3cixi">
+        <inputEntry id="UnaryTests_1kzw2ap">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sk45xo">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cvnni6">
+          <text>2,0 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04wk915">
+        <inputEntry id="UnaryTests_0qt9yih">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06owj72">
+          <text>"mäßig"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1orxqmm">
+          <text>1,3 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_139892s">
+        <inputEntry id="UnaryTests_0i5cf50">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15c19u8">
+          <text>"gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d480tr">
+          <text>1,0 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1htl1wo">
+        <inputEntry id="UnaryTests_1kf45ap">
+          <text>"mäßig"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tywrkj">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1una3wz">
+          <text>1,3 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c4pdtq">
+        <inputEntry id="UnaryTests_0qmelvv">
+          <text>"mäßig"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n1oyht">
+          <text>"mäßig"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k3zhkc">
+          <text>0,8 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xliiew">
+        <inputEntry id="UnaryTests_0dnc2y2">
+          <text>"mäßig"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ga69ph">
+          <text>"gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18r84fs">
+          <text>0,5 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y4sqin">
+        <inputEntry id="UnaryTests_1p7sweo">
+          <text>"gut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12htdob">
+          <text>"schlecht"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dq5q9b">
+          <text>1,0 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04g4v3i">
+        <inputEntry id="UnaryTests_04kvp2r">
+          <text>"gut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17rpdr4">
+          <text>"mäßig"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_012oish">
+          <text>0,5 kg</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x5kiyp">
+        <inputEntry id="UnaryTests_1njjevh">
+          <text>"gut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j4jhid">
+          <text>"gut"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wt2cuw">
+          <text>0,3 kg</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1lyiq2k" name="Wetter">
+    <informationRequirement id="InformationRequirement_1vb41s9">
+      <requiredInput href="#InputData_1vpk9dx" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1jakp4r">
+      <requiredInput href="#InputData_0u5biu1" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0mmdg7e">
+      <requiredInput href="#InputData_1ugny65" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1flyi69" hitPolicy="FIRST">
+      <input id="InputClause_0w5m4bj" label="Temperatur">
+        <inputExpression id="LiteralExpression_00oe9gn" typeRef="number" />
+      </input>
+      <input id="InputClause_0lt66pz" label="Windgeschwindkeit">
+        <inputExpression id="LiteralExpression_0pjwsd9" typeRef="number">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0nem2tb" label="Wetterverhältnisse">
+        <inputExpression id="LiteralExpression_0bhu6xb" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_02l752d">
+          <text>"sonnig","bewölkt","Regen","schnee"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_1utbzmc" label="Wetter" typeRef="string">
+        <outputValues id="UnaryTests_0844byt">
+          <text>"gut","mäßig","schlecht"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_09822c7">
+        <inputEntry id="UnaryTests_1rm8zkx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1onynod">
+          <text>&gt;=40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06t05hg">
+          <text>"Regen"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qnm8nx">
+          <text>"schlecht"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o1wpdx">
+        <inputEntry id="UnaryTests_1tnsuki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dy8yl9">
+          <text>&gt;=40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xfjntu">
+          <text>"schnee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a69cvl">
+          <text>"schlecht"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d4d9s7">
+        <inputEntry id="UnaryTests_0c3xakp">
+          <text>&gt;=20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0u4yn">
+          <text>&lt;80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mxs34p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vzn8j4">
+          <text>"gut"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gazq6k">
+        <inputEntry id="UnaryTests_0guymh3">
+          <text>&gt;=0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1915iyi">
+          <text>&lt;40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fdab3y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07drpom">
+          <text>"gut"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02qmakt">
+        <inputEntry id="UnaryTests_1icofql">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ywqk7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1atupbw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q5b5nn">
+          <text>"mäßig"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1vpk9dx" name="Temperatur" />
+  <inputData id="InputData_0u5biu1" name="Windgeschwindigkeit" />
+  <inputData id="InputData_1ugny65" name="Wetterverhältnisse" />
+  <inputData id="InputData_0iatjxo" name="Zustand der Bienenkolonie" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0kjdr6b">
+      <dmndi:DMNShape id="DMNShape_15vv2kl" dmnElementRef="decision_0bs4d6s">
+        <dc:Bounds height="80" width="180" x="291" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_08ylzwp" dmnElementRef="Decision_1lyiq2k">
+        <dc:Bounds height="80" width="180" x="291" y="240" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_18vhtyo" dmnElementRef="InputData_1vpk9dx">
+        <dc:Bounds height="45" width="125" x="158" y="398" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0e79dwu" dmnElementRef="InformationRequirement_1vb41s9">
+        <di:waypoint x="221" y="398" />
+        <di:waypoint x="336" y="340" />
+        <di:waypoint x="336" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_11epw3d" dmnElementRef="InputData_0u5biu1">
+        <dc:Bounds height="45" width="125" x="318" y="399" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1uxjlye" dmnElementRef="InformationRequirement_1jakp4r">
+        <di:waypoint x="381" y="399" />
+        <di:waypoint x="381" y="340" />
+        <di:waypoint x="381" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0avfp7h" dmnElementRef="InputData_1ugny65">
+        <dc:Bounds height="45" width="125" x="478" y="399" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1qqyml9" dmnElementRef="InformationRequirement_0mmdg7e">
+        <di:waypoint x="541" y="399" />
+        <di:waypoint x="426" y="340" />
+        <di:waypoint x="426" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0evjli1" dmnElementRef="InformationRequirement_1sfbzuj">
+        <di:waypoint x="381" y="240" />
+        <di:waypoint x="381" y="180" />
+        <di:waypoint x="381" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_034r6xe" dmnElementRef="InputData_0iatjxo">
+        <dc:Bounds height="45" width="125" x="558" y="98" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ievgvi" dmnElementRef="InformationRequirement_1br65yu">
+        <di:waypoint x="558" y="121" />
+        <di:waypoint x="491" y="120" />
+        <di:waypoint x="471" y="120" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
