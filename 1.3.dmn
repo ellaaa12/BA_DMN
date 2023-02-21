@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="_" name="Harvest honey" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_0bs4d6s" name="Available honey in Kg">
+    <informationRequirement id="InformationRequirement_1sfbzuj">
+      <requiredDecision href="#Decision_1lyiq2k" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1br65yu">
+      <requiredInput href="#InputData_0iatjxo" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_1g5u2w3">
+      <requiredAuthority href="#KnowledgeSource_0m8wzxm" />
+    </authorityRequirement>
+    <decisionTable id="decisionTable_075q50q">
+      <input id="input1" label="State of the bee colony  " biodi:width="150">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>State of the bee colony </text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0i0j2mc">
+          <text>"Good","Moderate","Bad"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0086lmr" label="Weather" biodi:width="150">
+        <inputExpression id="LiteralExpression_1tguc5z" typeRef="string">
+          <text>Weather</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1a16v4l">
+          <text>"Good","Moderate","Bad"</text>
+        </inputValues>
+      </input>
+      <output id="output1" label="Available honey in Kg" name="Available honey" typeRef="number" biodi:width="150" />
+      <rule id="DecisionRule_0h3cixi">
+        <inputEntry id="UnaryTests_1kzw2ap">
+          <text>"Bad"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sk45xo">
+          <text>"Bad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cvnni6">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04wk915">
+        <inputEntry id="UnaryTests_0qt9yih">
+          <text>"Bad"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06owj72">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1orxqmm">
+          <text>1.3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_139892s">
+        <inputEntry id="UnaryTests_0i5cf50">
+          <text>"Bad"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15c19u8">
+          <text>"Good"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d480tr">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1htl1wo">
+        <inputEntry id="UnaryTests_1kf45ap">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tywrkj">
+          <text>"Bad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1una3wz">
+          <text>1.3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c4pdtq">
+        <inputEntry id="UnaryTests_0qmelvv">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n1oyht">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k3zhkc">
+          <text>0.8</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xliiew">
+        <inputEntry id="UnaryTests_0dnc2y2">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ga69ph">
+          <text>"Good"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18r84fs">
+          <text>0.5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y4sqin">
+        <inputEntry id="UnaryTests_1p7sweo">
+          <text>"Good"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12htdob">
+          <text>"Bad"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dq5q9b">
+          <text>1.0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04g4v3i">
+        <inputEntry id="UnaryTests_04kvp2r">
+          <text>"Good"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17rpdr4">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_012oish">
+          <text>0.5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x5kiyp">
+        <inputEntry id="UnaryTests_1njjevh">
+          <text>"Good"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j4jhid">
+          <text>"Good"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wt2cuw">
+          <text>0.3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yd99k4">
+        <inputEntry id="UnaryTests_1n94ble">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j9e80c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ldof2p">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1lyiq2k" name="Weather">
+    <informationRequirement id="InformationRequirement_1vb41s9">
+      <requiredInput href="#InputData_1vpk9dx" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1jakp4r">
+      <requiredInput href="#InputData_0u5biu1" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0mmdg7e">
+      <requiredInput href="#InputData_1ugny65" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1flyi69">
+      <input id="InputClause_0w5m4bj" label="Temperature" biodi:width="150">
+        <inputExpression id="LiteralExpression_00oe9gn" typeRef="number">
+          <text>Temperature</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0lt66pz" label="Wind speed" biodi:width="150">
+        <inputExpression id="LiteralExpression_0pjwsd9" typeRef="number">
+          <text>Wind speed</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0nem2tb" label="Weather conditions  " biodi:width="150">
+        <inputExpression id="LiteralExpression_0bhu6xb" typeRef="string">
+          <text>Weather conditions
+</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_02l752d">
+          <text>"Sunny","Cloudy","Snow","Rain"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_1utbzmc" label="Weather" name="Weather" typeRef="string" biodi:width="150">
+        <outputValues id="UnaryTests_0844byt">
+          <text>"Good","Bad","Moderate"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_09822c7">
+        <inputEntry id="UnaryTests_1rm8zkx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1onynod">
+          <text>&gt;=40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06t05hg">
+          <text>"Rain"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qnm8nx">
+          <text>"Bad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o1wpdx">
+        <inputEntry id="UnaryTests_1tnsuki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dy8yl9">
+          <text>&gt;=40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xfjntu">
+          <text>"Snow"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a69cvl">
+          <text>"Bad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d4d9s7">
+        <inputEntry id="UnaryTests_0c3xakp">
+          <text>&gt;=20</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0u4yn">
+          <text>&lt;80</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mxs34p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vzn8j4">
+          <text>"Good"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gazq6k">
+        <inputEntry id="UnaryTests_0guymh3">
+          <text>&gt;=0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1915iyi">
+          <text>&lt;40</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fdab3y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07drpom">
+          <text>"Good"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02qmakt">
+        <inputEntry id="UnaryTests_1icofql">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ywqk7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1atupbw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q5b5nn">
+          <text>"Moderate"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1vpk9dx" name="Temperature" />
+  <inputData id="InputData_0u5biu1" name="Wind speed" />
+  <inputData id="InputData_1ugny65" name="Weather conditions" />
+  <inputData id="InputData_0iatjxo" name="State of the bee colony" />
+  <knowledgeSource id="KnowledgeSource_0m8wzxm" name="Rules for harvest" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0kjdr6b">
+      <dmndi:DMNShape id="DMNShape_15vv2kl" dmnElementRef="decision_0bs4d6s">
+        <dc:Bounds height="80" width="180" x="291" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_08ylzwp" dmnElementRef="Decision_1lyiq2k">
+        <dc:Bounds height="80" width="180" x="291" y="240" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_18vhtyo" dmnElementRef="InputData_1vpk9dx">
+        <dc:Bounds height="45" width="125" x="157" y="399" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0e79dwu" dmnElementRef="InformationRequirement_1vb41s9">
+        <di:waypoint x="220" y="399" />
+        <di:waypoint x="336" y="340" />
+        <di:waypoint x="336" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_11epw3d" dmnElementRef="InputData_0u5biu1">
+        <dc:Bounds height="45" width="125" x="318" y="399" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1uxjlye" dmnElementRef="InformationRequirement_1jakp4r">
+        <di:waypoint x="381" y="399" />
+        <di:waypoint x="381" y="340" />
+        <di:waypoint x="381" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0avfp7h" dmnElementRef="InputData_1ugny65">
+        <dc:Bounds height="45" width="125" x="478" y="399" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1qqyml9" dmnElementRef="InformationRequirement_0mmdg7e">
+        <di:waypoint x="541" y="399" />
+        <di:waypoint x="426" y="340" />
+        <di:waypoint x="426" y="320" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0evjli1" dmnElementRef="InformationRequirement_1sfbzuj">
+        <di:waypoint x="381" y="240" />
+        <di:waypoint x="381" y="180" />
+        <di:waypoint x="381" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_034r6xe" dmnElementRef="InputData_0iatjxo">
+        <dc:Bounds height="45" width="125" x="558" y="98" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ievgvi" dmnElementRef="InformationRequirement_1br65yu">
+        <di:waypoint x="558" y="121" />
+        <di:waypoint x="491" y="120" />
+        <di:waypoint x="471" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_05lfagy" dmnElementRef="KnowledgeSource_0m8wzxm">
+        <dc:Bounds height="63" width="100" x="120" y="88" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0jrz1qn" dmnElementRef="AuthorityRequirement_1g5u2w3">
+        <di:waypoint x="220" y="120" />
+        <di:waypoint x="290" y="120" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="_" name="Restaurant visit" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.0">
+  <decision id="decision_1qx7dtq" name="Dish">
+    <informationRequirement id="InformationRequirement_0kg036t">
+      <requiredDecision href="#Decision_0tq9154" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_0jh75uv">
+      <requiredAuthority href="#KnowledgeSource_0bd3e1i" />
+    </authorityRequirement>
+    <decisionTable id="decisionTable_1y8mhlm">
+      <input id="input1" label="Season" biodi:width="288">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>Season</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_14vwjgg">
+          <text>"Winter","Early spring","First spring","Full spring","Early summer","Midsummer","Late summer","Early autumn","Full autumn","Late autumn"</text>
+        </inputValues>
+      </input>
+      <output id="output1" label="Dish" name="Dish" typeRef="string" biodi:width="150">
+        <outputValues id="UnaryTests_1b87omz">
+          <text>"Quinoa-Salat","Fenchelrisotto"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0n39k46">
+        <inputEntry id="UnaryTests_1f0jvrx">
+          <text>"Winter","Early spring","First spring","Full spring","Early summer"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1of0kmx">
+          <text>"Quinoa-Salat"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r22qux">
+        <inputEntry id="UnaryTests_0bg3nnq">
+          <text>"Midsummer","Late summer","Early autumn","Full autumn","Late autumn"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pj0qhj">
+          <text>"Fenchelrisotto"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0psb0nl" name="Day of the year" />
+  <knowledgeSource id="KnowledgeSource_0wccl78" name="Phenological clock" />
+  <decision id="Decision_0tq9154" name="Season">
+    <informationRequirement id="InformationRequirement_1kvx0kg">
+      <requiredInput href="#InputData_0psb0nl" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_1gvzzk9">
+      <requiredAuthority href="#KnowledgeSource_0wccl78" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_0cv1uit" biodi:annotationsWidth="400">
+      <input id="InputClause_10y2co7" label="Day of the year">
+        <inputExpression id="LiteralExpression_039k64z" typeRef="number" />
+      </input>
+      <output id="OutputClause_02k9m91" label="Season" name="Season" typeRef="string" biodi:width="219">
+        <outputValues id="UnaryTests_0wco0om">
+          <text>"Winter","Early spring","First spring","Full spring","Early summer","Midsummer","Early autumn","Full autumn","Late autumn","Late summer"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_047jcet">
+        <inputEntry id="UnaryTests_1dmupdi">
+          <text>[1..42]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gj98ta">
+          <text>"Early spring"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tineao">
+        <inputEntry id="UnaryTests_1exxwuz">
+          <text>[43..74]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cbtnvi">
+          <text>"First spring"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iymgew">
+        <inputEntry id="UnaryTests_0htj89y">
+          <text>[75..103]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mqda8k">
+          <text>"Full spring"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sy2ik1">
+        <inputEntry id="UnaryTests_1n7yu53">
+          <text>[104..126]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vnfc6r">
+          <text>"Early summer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f7m14l">
+        <inputEntry id="UnaryTests_0smob0h">
+          <text>[127..173]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19rxbt5">
+          <text>"Midsummer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hki21o">
+        <inputEntry id="UnaryTests_0jlqmy7">
+          <text>[174..191]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0opv6oy">
+          <text>"Late summer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12er228">
+        <inputEntry id="UnaryTests_0dy3dhe">
+          <text>[192..217]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_081y6qy">
+          <text>"Early autumn"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02s31tx">
+        <inputEntry id="UnaryTests_04ybkza">
+          <text>[218..249]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ow5u2k">
+          <text>"Full autumn"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v9u87e">
+        <inputEntry id="UnaryTests_1y6mlmd">
+          <text>[250..268]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rb7ek1">
+          <text>"Late autumn"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wpt5cv">
+        <inputEntry id="UnaryTests_1s8hdm2">
+          <text>[269..365]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fjbcq9">
+          <text>"Winter"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_0bd3e1i" name="Host" />
+  <inputData id="InputData_1affiif" name="Children present?" />
+  <decision id="Decision_1jg732r" name="Drinks">
+    <informationRequirement id="InformationRequirement_1wcr3ht">
+      <requiredDecision href="#decision_1qx7dtq" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0c8etj9">
+      <requiredInput href="#InputData_1affiif" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1skzoaz" biodi:annotationsWidth="400">
+      <input id="InputClause_1txup47" label="Dish" biodi:width="150">
+        <inputExpression id="LiteralExpression_1x7rjwr" typeRef="string">
+          <text>Dish</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0rsxvb7">
+          <text>"Quinoa-Salat ","Spargelpasta","Fenchelrisotto","Kartoffel-Mangold-Auflauf","Kürbiscurry","Rote Bete-Salat","Reisgericht mit Grünkohl","Pastinakenpommes"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0kdg4ls" label="Children present?" biodi:width="150">
+        <inputExpression id="LiteralExpression_1yhm8jk" typeRef="boolean">
+          <text>Children present?</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_19kmwei" label="Drinks" name="Drinks" typeRef="string" biodi:width="150">
+        <outputValues id="UnaryTests_1inoifd">
+          <text>"Non alcoholic drinks","Alcoholic drinks"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_07h1td6">
+        <inputEntry id="UnaryTests_1orm575">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lwk8ug">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ok0laj">
+          <text>"Non alcoholic drinks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1grmil9">
+        <inputEntry id="UnaryTests_0wdrp7d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q9u689">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19gm2k9">
+          <text>"Alcoholic drinks"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0kajtme">
+      <dmndi:DMNShape id="DMNShape_0tzu02l" dmnElementRef="decision_1qx7dtq">
+        <dc:Bounds height="80" width="180" x="330" y="250" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1xrwva6" dmnElementRef="InformationRequirement_0kg036t">
+        <di:waypoint x="420" y="460" />
+        <di:waypoint x="420" y="350" />
+        <di:waypoint x="420" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0qo1kje" dmnElementRef="InputData_0psb0nl">
+        <dc:Bounds height="45" width="125" x="357" y="597" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1pbqthq" dmnElementRef="InformationRequirement_1kvx0kg">
+        <di:waypoint x="420" y="597" />
+        <di:waypoint x="420" y="560" />
+        <di:waypoint x="420" y="540" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_02iqxht" dmnElementRef="KnowledgeSource_0wccl78">
+        <dc:Bounds height="63" width="100" x="180" y="478" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1edwog8" dmnElementRef="AuthorityRequirement_1gvzzk9">
+        <di:waypoint x="280" y="510" />
+        <di:waypoint x="330" y="500" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1u7ee4h" dmnElementRef="Decision_0tq9154">
+        <dc:Bounds height="80" width="180" x="330" y="460" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1mrag0c" dmnElementRef="KnowledgeSource_0bd3e1i">
+        <dc:Bounds height="63" width="100" x="160" y="268" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0k9u1lp" dmnElementRef="AuthorityRequirement_0jh75uv">
+        <di:waypoint x="260" y="300" />
+        <di:waypoint x="330" y="300" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0vmt6fl" dmnElementRef="InformationRequirement_1wcr3ht">
+        <di:waypoint x="420" y="250" />
+        <di:waypoint x="420" y="180" />
+        <di:waypoint x="420" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0gcp0fp" dmnElementRef="InputData_1affiif">
+        <dc:Bounds height="45" width="125" x="577" y="277" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ixu548" dmnElementRef="InformationRequirement_0c8etj9">
+        <di:waypoint x="640" y="277" />
+        <di:waypoint x="480" y="180" />
+        <di:waypoint x="480" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1jis6it" dmnElementRef="Decision_1jg732r">
+        <dc:Bounds height="80" width="180" x="360" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
