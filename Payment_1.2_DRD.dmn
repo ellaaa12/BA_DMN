@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="ID" name="Payment request" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.1">
+  <inputData id="InputData_1gp9l5m" name="Age of the applicant" />
+  <inputData id="InputData_06o90rz" name="Employment status of the applicant" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_1ouwcdn" name="Business Rules for Issuing a Credit Card">
+    <authorityRequirement id="AuthorityRequirement_02wokbs">
+      <requiredAuthority href="#KnowledgeSource_01gmvec" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <knowledgeSource id="KnowledgeSource_01gmvec" name="Legal document §38 ff." />
+  <inputData id="InputData_1frb9o8" name="Debts" />
+  <decision id="Decision_0p8eehg" name="Payment by credit card possible?">
+    <informationRequirement id="InformationRequirement_1mzvqwg">
+      <requiredDecision href="#decision_0o3nck6" />
+    </informationRequirement>
+  </decision>
+  <decision id="decision_0o3nck6" name="Possession of a credit card">
+    <informationRequirement id="InformationRequirement_1sxhl7z">
+      <requiredInput href="#InputData_06o90rz" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dmnl0p">
+      <requiredInput href="#InputData_1gp9l5m" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0v9zrgx">
+      <requiredInput href="#InputData_1frb9o8" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1c8xdsr">
+      <requiredKnowledge href="#BusinessKnowledgeModel_1ouwcdn" />
+    </knowledgeRequirement>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0ecoojw">
+      <dmndi:DMNShape id="DMNShape_1t17k1o" dmnElementRef="InputData_1gp9l5m">
+        <dc:Bounds height="45" width="125" x="507" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1930h8v" dmnElementRef="InputData_06o90rz">
+        <dc:Bounds height="45" width="125" x="597" y="297" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_09xktr6" dmnElementRef="BusinessKnowledgeModel_1ouwcdn">
+        <dc:Bounds height="46" width="135" x="312" y="187" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0wdjg3s" dmnElementRef="KnowledgeSource_01gmvec">
+        <dc:Bounds height="63" width="100" x="160" y="178" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1o15dgu" dmnElementRef="KnowledgeRequirement_1c8xdsr">
+        <di:waypoint x="447" y="210" />
+        <di:waypoint x="480" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1481zm7" dmnElementRef="InformationRequirement_1sxhl7z">
+        <di:waypoint x="660" y="297" />
+        <di:waypoint x="600" y="270" />
+        <di:waypoint x="600" y="250" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1j5kot0" dmnElementRef="InformationRequirement_1dmnl0p">
+        <di:waypoint x="570" y="122" />
+        <di:waypoint x="570" y="150" />
+        <di:waypoint x="570" y="170" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1510vt7" dmnElementRef="InformationRequirement_1mzvqwg">
+        <di:waypoint x="660" y="210" />
+        <di:waypoint x="710" y="210" />
+        <di:waypoint x="730" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1khlw73" dmnElementRef="InputData_1frb9o8">
+        <dc:Bounds height="45" width="125" x="407" y="297" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_17s5ids" dmnElementRef="InformationRequirement_0v9zrgx">
+        <di:waypoint x="470" y="297" />
+        <di:waypoint x="540" y="270" />
+        <di:waypoint x="540" y="250" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0gqe55e" dmnElementRef="Decision_0p8eehg">
+        <dc:Bounds height="80" width="180" x="730" y="170" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_00wg0u2" dmnElementRef="decision_0o3nck6">
+        <dc:Bounds height="80" width="180" x="480" y="170" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1eo6mm7" dmnElementRef="AuthorityRequirement_02wokbs">
+        <di:waypoint x="260" y="210" />
+        <di:waypoint x="312" y="210" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

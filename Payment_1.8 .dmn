@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="ID" name="Payment request" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.1">
+  <decision id="decision_0o3nck6" name="Possession of a credit card">
+    <informationRequirement id="InformationRequirement_1sxhl7z">
+      <requiredInput href="#InputData_06o90rz" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dmnl0p">
+      <requiredInput href="#InputData_1gp9l5m" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0v9zrgx">
+      <requiredInput href="#InputData_1frb9o8" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1b8kc7t">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0bdgor6" />
+    </knowledgeRequirement>
+    <decisionTable id="decisionTable_1bhurhp">
+      <input id="input1" label="Age of the applicant" biodi:width="150">
+        <inputExpression id="inputExpression1" typeRef="number">
+          <text>Age of the applicant</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1hh4fpg" label="Employment status of the applicant" biodi:width="150">
+        <inputExpression id="LiteralExpression_066hlkr" typeRef="string">
+          <text>Employment status of the applicant</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0c5hat8">
+          <text>"Job seeking","Employed"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_17pb28t" label="Debts" biodi:width="150">
+        <inputExpression id="LiteralExpression_0tp5ngl" typeRef="boolean">
+          <text>Debts</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Possession of a credit card" name="Possession of a credit card" typeRef="boolean" biodi:width="150" />
+      <rule id="DecisionRule_1kgc8wb">
+        <inputEntry id="UnaryTests_1aj9y52">
+          <text>[18..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hic7nj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l6ybzn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vve5fh">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rllfuq">
+        <inputEntry id="UnaryTests_0f698rb">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02da3wf">
+          <text>"Job seeking"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t3yv3p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c6g3wo">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gc9qpx">
+        <inputEntry id="UnaryTests_0i4zhs8">
+          <text>&lt;18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zgtyek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ekykcr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yj5h6p">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0u8c399">
+        <inputEntry id="UnaryTests_0tn5d3h">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qax0gc">
+          <text>"Employed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ix6ztc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1j2g0hb">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jbcqzc">
+        <inputEntry id="UnaryTests_1tvtjkd">
+          <text>&gt;65</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rye6wj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dpt3z7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1buoyqy">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1gp9l5m" name="Age of the applicant" />
+  <inputData id="InputData_06o90rz" name="Employment status of the applicant" />
+  <knowledgeSource id="KnowledgeSource_01gmvec" name="Business Principles" />
+  <decision id="Decision_0p8eehg" name="Payment by credit card possible?">
+    <informationRequirement id="InformationRequirement_1mzvqwg">
+      <requiredDecision href="#decision_0o3nck6" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_01lpntx">
+      <requiredInput href="#InputData_1nkmik7" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1rcs1xy">
+      <input id="InputClause_1tdznvk" label="Possession of a credit card" biodi:width="150">
+        <inputExpression id="LiteralExpression_1g1a2nw" typeRef="boolean">
+          <text>Possession of a credit card</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1vwiojs" label="Order price" biodi:width="150">
+        <inputExpression id="LiteralExpression_0q87rkg" typeRef="number">
+          <text>Order price</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0cetfqy" label="Payment by credit card possible?" name="Payment by credit card possible?" typeRef="boolean" biodi:width="150" />
+      <rule id="DecisionRule_187husx">
+        <inputEntry id="UnaryTests_0nvbsqf">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wvczd8">
+          <text>&lt;= 4.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ro2nrw">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02dpp8q">
+        <inputEntry id="UnaryTests_0stkjwy">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tx2mdo">
+          <text>&gt; 4.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07ozjbo">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1nkmik7" name="Court number" />
+  <inputData id="InputData_1frb9o8" name="Debts" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0bdgor6" name="Business Rules for Issuing a Credit Card">
+    <authorityRequirement id="AuthorityRequirement_0j6310y">
+      <requiredAuthority href="#KnowledgeSource_01gmvec" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0ecoojw">
+      <dmndi:DMNShape id="DMNShape_0wxk9uo" dmnElementRef="decision_0o3nck6">
+        <dc:Bounds height="80" width="180" x="420" y="170" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1t17k1o" dmnElementRef="InputData_1gp9l5m">
+        <dc:Bounds height="45" width="125" x="517" y="307" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1930h8v" dmnElementRef="InputData_06o90rz">
+        <dc:Bounds height="45" width="125" x="447" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0wdjg3s" dmnElementRef="KnowledgeSource_01gmvec">
+        <dc:Bounds height="63" width="100" x="120" y="188" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1481zm7" dmnElementRef="InformationRequirement_1sxhl7z">
+        <di:waypoint x="510" y="122" />
+        <di:waypoint x="510" y="150" />
+        <di:waypoint x="510" y="170" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1j5kot0" dmnElementRef="InformationRequirement_1dmnl0p">
+        <di:waypoint x="580" y="307" />
+        <di:waypoint x="540" y="270" />
+        <di:waypoint x="540" y="250" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1510vt7" dmnElementRef="InformationRequirement_1mzvqwg">
+        <di:waypoint x="600" y="210" />
+        <di:waypoint x="640" y="210" />
+        <di:waypoint x="660" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1hz1tw4" dmnElementRef="Decision_0p8eehg">
+        <dc:Bounds height="80" width="180" x="660" y="170" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1mu2rh5" dmnElementRef="InputData_1nkmik7">
+        <dc:Bounds height="45" width="125" x="687" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1khlw73" dmnElementRef="InputData_1frb9o8">
+        <dc:Bounds height="45" width="125" x="367" y="307" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_17s5ids" dmnElementRef="InformationRequirement_0v9zrgx">
+        <di:waypoint x="430" y="307" />
+        <di:waypoint x="480" y="270" />
+        <di:waypoint x="480" y="250" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0cs7ye5" dmnElementRef="InformationRequirement_01lpntx">
+        <di:waypoint x="750" y="122" />
+        <di:waypoint x="750" y="150" />
+        <di:waypoint x="750" y="170" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_14no9sr" dmnElementRef="BusinessKnowledgeModel_0bdgor6">
+        <dc:Bounds height="46" width="135" x="252" y="187" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1lydsbp" dmnElementRef="KnowledgeRequirement_1b8kc7t">
+        <di:waypoint x="387" y="210" />
+        <di:waypoint x="420" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0tsjy3v" dmnElementRef="AuthorityRequirement_0j6310y">
+        <di:waypoint x="220" y="216" />
+        <di:waypoint x="252" y="215" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

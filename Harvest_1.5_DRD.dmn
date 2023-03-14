@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="ID" name="Harvest honey" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.1">
+  <inputData id="InputData_1vpk9dx" name="Temperature" />
+  <inputData id="InputData_0u5biu1" name="Wind speed" />
+  <inputData id="InputData_1ugny65" name="Weather conditions" />
+  <inputData id="InputData_0iatjxo" name="State of the bee colony" />
+  <knowledgeSource id="KnowledgeSource_0m8wzxm" name="Rules for harvest" />
+  <decision id="Decision_1lyiq2k" name="Weather">
+    <informationRequirement id="InformationRequirement_1vb41s9">
+      <requiredInput href="#InputData_1vpk9dx" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1jakp4r">
+      <requiredInput href="#InputData_0u5biu1" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0mmdg7e">
+      <requiredInput href="#InputData_1ugny65" />
+    </informationRequirement>
+  </decision>
+  <decision id="decision_0bs4d6s" name="Available honey in Kg">
+    <informationRequirement id="InformationRequirement_1sfbzuj">
+      <requiredDecision href="#Decision_1lyiq2k" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1br65yu">
+      <requiredInput href="#InputData_0iatjxo" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_0xqx8e4" name="Harvest honey?">
+    <informationRequirement id="InformationRequirement_01wb8td">
+      <requiredDecision href="#decision_0bs4d6s" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1etm2vz">
+      <requiredInput href="#InputData_1on2yej" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_17ga93s">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0ij46l2" />
+    </knowledgeRequirement>
+    <authorityRequirement id="AuthorityRequirement_0b7owed">
+      <requiredAuthority href="#KnowledgeSource_0m8wzxm" />
+    </authorityRequirement>
+  </decision>
+  <inputData id="InputData_1on2yej" name="Name" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0ij46l2" name="Defined area of ​​responsibility" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0kjdr6b">
+      <dmndi:DMNShape id="DMNShape_18vhtyo" dmnElementRef="InputData_1vpk9dx">
+        <dc:Bounds height="45" width="125" x="157" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0e79dwu" dmnElementRef="InformationRequirement_1vb41s9">
+        <di:waypoint x="220" y="337" />
+        <di:waypoint x="315" y="280" />
+        <di:waypoint x="315" y="260" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_11epw3d" dmnElementRef="InputData_0u5biu1">
+        <dc:Bounds height="45" width="125" x="297" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1uxjlye" dmnElementRef="InformationRequirement_1jakp4r">
+        <di:waypoint x="360" y="337" />
+        <di:waypoint x="360" y="280" />
+        <di:waypoint x="360" y="260" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0avfp7h" dmnElementRef="InputData_1ugny65">
+        <dc:Bounds height="45" width="125" x="437" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1qqyml9" dmnElementRef="InformationRequirement_0mmdg7e">
+        <di:waypoint x="500" y="337" />
+        <di:waypoint x="405" y="280" />
+        <di:waypoint x="405" y="260" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0evjli1" dmnElementRef="InformationRequirement_1sfbzuj">
+        <di:waypoint x="450" y="220" />
+        <di:waypoint x="490" y="220" />
+        <di:waypoint x="510" y="220" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_034r6xe" dmnElementRef="InputData_0iatjxo">
+        <dc:Bounds height="45" width="125" x="537" y="97" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ievgvi" dmnElementRef="InformationRequirement_1br65yu">
+        <di:waypoint x="600" y="142" />
+        <di:waypoint x="600" y="160" />
+        <di:waypoint x="600" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_15c07ub" dmnElementRef="InformationRequirement_01wb8td">
+        <di:waypoint x="690" y="220" />
+        <di:waypoint x="720" y="220" />
+        <di:waypoint x="740" y="220" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_05lfagy" dmnElementRef="KnowledgeSource_0m8wzxm">
+        <dc:Bounds height="63" width="100" x="980" y="188" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0577zss" dmnElementRef="AuthorityRequirement_0b7owed">
+        <di:waypoint x="980" y="220" />
+        <di:waypoint x="920" y="221" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_19cbar3" dmnElementRef="Decision_1lyiq2k">
+        <dc:Bounds height="80" width="180" x="270" y="180" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0zu2q9h" dmnElementRef="decision_0bs4d6s">
+        <dc:Bounds height="80" width="180" x="510" y="180" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1k4x4u9" dmnElementRef="Decision_0xqx8e4">
+        <dc:Bounds height="80" width="180" x="740" y="180" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1ibp8zc" dmnElementRef="InputData_1on2yej">
+        <dc:Bounds height="45" width="125" x="767" y="97" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0ri5wgl" dmnElementRef="BusinessKnowledgeModel_0ij46l2">
+        <dc:Bounds height="46" width="135" x="752" y="317" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1elkwi0" dmnElementRef="InformationRequirement_1etm2vz">
+        <di:waypoint x="830" y="142" />
+        <di:waypoint x="830" y="160" />
+        <di:waypoint x="830" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0whvioa" dmnElementRef="KnowledgeRequirement_17ga93s">
+        <di:waypoint x="820" y="317" />
+        <di:waypoint x="820" y="260" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="ID" name="Restaurant visit" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.1">
+  <knowledgeSource id="KnowledgeSource_0bd3e1i" name="Host" />
+  <inputData id="InputData_0mhcoxw" name="Number of guests" />
+  <decision id="decision_1qx7dtq" name="Dish">
+    <informationRequirement id="InformationRequirement_0pdi5s4">
+      <requiredInput href="#InputData_0mhcoxw" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_0jh75uv">
+      <requiredAuthority href="#KnowledgeSource_0bd3e1i" />
+    </authorityRequirement>
+  </decision>
+  <decision id="Decision_1jg732r" name="Drinks">
+    <informationRequirement id="InformationRequirement_1wcr3ht">
+      <requiredDecision href="#decision_1qx7dtq" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_148td95">
+      <requiredInput href="#InputData_19lsn46" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_0y6z3oh">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0ixlwmz" />
+    </knowledgeRequirement>
+  </decision>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0ixlwmz" name="Menu" />
+  <inputData id="InputData_19lsn46" name="Dry alcoholics?" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0kajtme">
+      <dmndi:DMNShape id="DMNShape_1mrag0c" dmnElementRef="KnowledgeSource_0bd3e1i">
+        <dc:Bounds height="63" width="100" x="160" y="178" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0k9u1lp" dmnElementRef="AuthorityRequirement_0jh75uv">
+        <di:waypoint x="260" y="210" />
+        <di:waypoint x="330" y="210" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1s4te6i" dmnElementRef="InputData_0mhcoxw">
+        <dc:Bounds height="45" width="125" x="357" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_10bwlhh" dmnElementRef="InformationRequirement_0pdi5s4">
+        <di:waypoint x="420" y="122" />
+        <di:waypoint x="420" y="140" />
+        <di:waypoint x="420" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0vmt6fl" dmnElementRef="InformationRequirement_1wcr3ht">
+        <di:waypoint x="510" y="200" />
+        <di:waypoint x="540" y="200" />
+        <di:waypoint x="560" y="200" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0rv4kbi" dmnElementRef="decision_1qx7dtq">
+        <dc:Bounds height="80" width="180" x="330" y="160" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_10l41qm" dmnElementRef="Decision_1jg732r">
+        <dc:Bounds height="80" width="180" x="560" y="160" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_05i3y6p" dmnElementRef="BusinessKnowledgeModel_0ixlwmz">
+        <dc:Bounds height="46" width="135" x="782" y="187" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1fo02yi" dmnElementRef="KnowledgeRequirement_0y6z3oh">
+        <di:waypoint x="782" y="207" />
+        <di:waypoint x="740" y="205" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0grvjq0" dmnElementRef="InputData_19lsn46">
+        <dc:Bounds height="45" width="125" x="587" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1fomccx" dmnElementRef="InformationRequirement_148td95">
+        <di:waypoint x="650" y="122" />
+        <di:waypoint x="650" y="140" />
+        <di:waypoint x="650" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
