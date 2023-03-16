@@ -14,7 +14,7 @@
       <requiredDecision href="#decision_0o3nck6" />
     </informationRequirement>
   </decision>
-  <decision id="decision_0o3nck6" name="Availability of a credit card">
+  <decision id="decision_0o3nck6" name="Credit card eligibility">
     <informationRequirement id="InformationRequirement_1sxhl7z">
       <requiredInput href="#InputData_06o90rz" />
     </informationRequirement>
