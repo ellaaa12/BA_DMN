@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="ID" name="Payment request" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.1">
-  <decision id="decision_0o3nck6" name="Possession of a credit card">
+  <decision id="decision_0o3nck6" name="Credit card eligibility">
     <informationRequirement id="InformationRequirement_1sxhl7z">
       <requiredInput href="#InputData_06o90rz" />
     </informationRequirement>
@@ -32,7 +32,7 @@
           <text>Debts</text>
         </inputExpression>
       </input>
-      <output id="output1" label="Possession of a credit card" name="Possession of a credit card" typeRef="boolean" biodi:width="150" />
+      <output id="output1" label="Credit card eligibility" name="Credit card eligibility" typeRef="boolean" biodi:width="150" />
       <rule id="DecisionRule_1kgc8wb">
         <inputEntry id="UnaryTests_1aj9y52">
           <text>[18..30]</text>
