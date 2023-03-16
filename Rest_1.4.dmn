@@ -57,14 +57,6 @@
           <text>"Winter","Early spring","First spring","Full spring","Early summer","Midsummer","Early autumn","Full autumn","Late autumn","Late summer"</text>
         </outputValues>
       </output>
-      <rule id="DecisionRule_047jcet">
-        <inputEntry id="UnaryTests_1dmupdi">
-          <text>[1..42]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1gj98ta">
-          <text>"Early spring"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1tineao">
         <inputEntry id="UnaryTests_1exxwuz">
           <text>[43..74]</text>
@@ -81,20 +73,52 @@
           <text>"Full spring"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1sy2ik1">
-        <inputEntry id="UnaryTests_1n7yu53">
-          <text>[104..126]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vnfc6r">
-          <text>"Early summer"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0f7m14l">
         <inputEntry id="UnaryTests_0smob0h">
           <text>[127..173]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_19rxbt5">
           <text>"Midsummer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v9u87e">
+        <inputEntry id="UnaryTests_1y6mlmd">
+          <text>[250..268]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rb7ek1">
+          <text>"Late autumn"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02s31tx">
+        <inputEntry id="UnaryTests_04ybkza">
+          <text>[218..249]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ow5u2k">
+          <text>"Full autumn"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_047jcet">
+        <inputEntry id="UnaryTests_1dmupdi">
+          <text>[1..42]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gj98ta">
+          <text>"Early spring"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wpt5cv">
+        <inputEntry id="UnaryTests_1s8hdm2">
+          <text>[269..365]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fjbcq9">
+          <text>"Winter"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sy2ik1">
+        <inputEntry id="UnaryTests_1n7yu53">
+          <text>[104..126]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vnfc6r">
+          <text>"Early summer"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0hki21o">
@@ -111,30 +135,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_081y6qy">
           <text>"Early autumn"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_02s31tx">
-        <inputEntry id="UnaryTests_04ybkza">
-          <text>[218..249]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ow5u2k">
-          <text>"Full autumn"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1v9u87e">
-        <inputEntry id="UnaryTests_1y6mlmd">
-          <text>[250..268]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rb7ek1">
-          <text>"Late autumn"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0wpt5cv">
-        <inputEntry id="UnaryTests_1s8hdm2">
-          <text>[269..365]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1fjbcq9">
-          <text>"Winter"</text>
         </outputEntry>
       </rule>
     </decisionTable>
