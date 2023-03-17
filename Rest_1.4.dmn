@@ -168,7 +168,7 @@
       </output>
       <rule id="DecisionRule_07h1td6">
         <inputEntry id="UnaryTests_1orm575">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lwk8ug">
           <text>true</text>
@@ -179,7 +179,7 @@
       </rule>
       <rule id="DecisionRule_1grmil9">
         <inputEntry id="UnaryTests_0wdrp7d">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1q9u689">
           <text>false</text>
