@@ -38,10 +38,10 @@
           <text>[18..30]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hic7nj">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0l6ybzn">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vve5fh">
           <text>true</text>
@@ -55,7 +55,7 @@
           <text>"Job seeking"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t3yv3p">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c6g3wo">
           <text>false</text>
@@ -66,10 +66,10 @@
           <text>&lt;18</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0zgtyek">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ekykcr">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1yj5h6p">
           <text>false</text>
@@ -83,7 +83,7 @@
           <text>"Employed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ix6ztc">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1j2g0hb">
           <text>true</text>
@@ -94,10 +94,10 @@
           <text>&gt;65</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rye6wj">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dpt3z7">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1buoyqy">
           <text>false</text>
