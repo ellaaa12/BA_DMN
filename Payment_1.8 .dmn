@@ -10,18 +10,15 @@
     <informationRequirement id="InformationRequirement_0v9zrgx">
       <requiredInput href="#InputData_1frb9o8" />
     </informationRequirement>
-    <knowledgeRequirement id="KnowledgeRequirement_1b8kc7t">
-      <requiredKnowledge href="#BusinessKnowledgeModel_0bdgor6" />
-    </knowledgeRequirement>
     <decisionTable id="decisionTable_1bhurhp">
-      <input id="input1" label="Age of the applicant" biodi:width="150">
+      <input id="input1" label="Age " biodi:width="150">
         <inputExpression id="inputExpression1" typeRef="number">
-          <text>Age of the applicant</text>
+          <text>Age </text>
         </inputExpression>
       </input>
-      <input id="InputClause_1hh4fpg" label="Employment status of the applicant" biodi:width="150">
+      <input id="InputClause_1hh4fpg" label="Employment status" biodi:width="150">
         <inputExpression id="LiteralExpression_066hlkr" typeRef="string">
-          <text>Employment status of the applicant</text>
+          <text>Employment status </text>
         </inputExpression>
         <inputValues id="UnaryTests_0c5hat8">
           <text>"Job seeking","Employed"</text>
@@ -105,9 +102,8 @@
       </rule>
     </decisionTable>
   </decision>
-  <inputData id="InputData_1gp9l5m" name="Age of the applicant" />
-  <inputData id="InputData_06o90rz" name="Employment status of the applicant" />
-  <knowledgeSource id="KnowledgeSource_01gmvec" name="Business Principles" />
+  <inputData id="InputData_1gp9l5m" name="Age" />
+  <inputData id="InputData_06o90rz" name="Employment status" />
   <decision id="Decision_0p8eehg" name="Payment by credit card possible?">
     <informationRequirement id="InformationRequirement_1mzvqwg">
       <requiredDecision href="#decision_0o3nck6" />
@@ -151,71 +147,52 @@
       </rule>
     </decisionTable>
   </decision>
-  <inputData id="InputData_1nkmik7" name="Court number" />
+  <inputData id="InputData_1nkmik7" name="Order price" />
   <inputData id="InputData_1frb9o8" name="Debts" />
-  <businessKnowledgeModel id="BusinessKnowledgeModel_0bdgor6" name="Business Rules for Issuing a Credit Card">
-    <authorityRequirement id="AuthorityRequirement_0j6310y">
-      <requiredAuthority href="#KnowledgeSource_01gmvec" />
-    </authorityRequirement>
-  </businessKnowledgeModel>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_0ecoojw">
       <dmndi:DMNShape id="DMNShape_0wxk9uo" dmnElementRef="decision_0o3nck6">
-        <dc:Bounds height="80" width="180" x="420" y="170" />
+        <dc:Bounds height="80" width="180" x="310" y="170" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_1t17k1o" dmnElementRef="InputData_1gp9l5m">
-        <dc:Bounds height="45" width="125" x="517" y="307" />
+        <dc:Bounds height="45" width="125" x="407" y="307" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_1930h8v" dmnElementRef="InputData_06o90rz">
-        <dc:Bounds height="45" width="125" x="447" y="77" />
-      </dmndi:DMNShape>
-      <dmndi:DMNShape id="DMNShape_0wdjg3s" dmnElementRef="KnowledgeSource_01gmvec">
-        <dc:Bounds height="63" width="100" x="120" y="188" />
+        <dc:Bounds height="45" width="125" x="157" y="187" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_1481zm7" dmnElementRef="InformationRequirement_1sxhl7z">
-        <di:waypoint x="510" y="122" />
-        <di:waypoint x="510" y="150" />
-        <di:waypoint x="510" y="170" />
+        <di:waypoint x="282" y="210" />
+        <di:waypoint x="290" y="210" />
+        <di:waypoint x="310" y="210" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_1j5kot0" dmnElementRef="InformationRequirement_1dmnl0p">
-        <di:waypoint x="580" y="307" />
-        <di:waypoint x="540" y="270" />
-        <di:waypoint x="540" y="250" />
+        <di:waypoint x="470" y="307" />
+        <di:waypoint x="430" y="270" />
+        <di:waypoint x="430" y="250" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_1510vt7" dmnElementRef="InformationRequirement_1mzvqwg">
-        <di:waypoint x="600" y="210" />
-        <di:waypoint x="640" y="210" />
-        <di:waypoint x="660" y="210" />
+        <di:waypoint x="400" y="170" />
+        <di:waypoint x="400" y="160" />
+        <di:waypoint x="400" y="140" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_1hz1tw4" dmnElementRef="Decision_0p8eehg">
-        <dc:Bounds height="80" width="180" x="660" y="170" />
+        <dc:Bounds height="80" width="180" x="310" y="60" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_1mu2rh5" dmnElementRef="InputData_1nkmik7">
-        <dc:Bounds height="45" width="125" x="687" y="77" />
+        <dc:Bounds height="45" width="125" x="157" y="77" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_1khlw73" dmnElementRef="InputData_1frb9o8">
-        <dc:Bounds height="45" width="125" x="367" y="307" />
+        <dc:Bounds height="45" width="125" x="257" y="307" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_17s5ids" dmnElementRef="InformationRequirement_0v9zrgx">
-        <di:waypoint x="430" y="307" />
-        <di:waypoint x="480" y="270" />
-        <di:waypoint x="480" y="250" />
+        <di:waypoint x="320" y="307" />
+        <di:waypoint x="370" y="270" />
+        <di:waypoint x="370" y="250" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_0cs7ye5" dmnElementRef="InformationRequirement_01lpntx">
-        <di:waypoint x="750" y="122" />
-        <di:waypoint x="750" y="150" />
-        <di:waypoint x="750" y="170" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_14no9sr" dmnElementRef="BusinessKnowledgeModel_0bdgor6">
-        <dc:Bounds height="46" width="135" x="252" y="187" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1lydsbp" dmnElementRef="KnowledgeRequirement_1b8kc7t">
-        <di:waypoint x="387" y="210" />
-        <di:waypoint x="420" y="210" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_0tsjy3v" dmnElementRef="AuthorityRequirement_0j6310y">
-        <di:waypoint x="220" y="216" />
-        <di:waypoint x="252" y="215" />
+        <di:waypoint x="282" y="100" />
+        <di:waypoint x="290" y="100" />
+        <di:waypoint x="310" y="100" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
