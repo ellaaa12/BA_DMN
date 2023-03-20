@@ -8,14 +8,9 @@
       <requiredInput href="#InputData_0w30htm" />
     </informationRequirement>
     <decisionTable id="decisionTable_1">
-      <input id="input_1" label="Temparature">
+      <input id="input_1" label="Temperature">
         <inputExpression id="inputExpression_1" typeRef="integer">
-          <text>Temparature</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_0vm050e" label="Wind speed">
-        <inputExpression id="LiteralExpression_0nuiv0b" typeRef="integer">
-          <text>Wind speed</text>
+          <text></text>
         </inputExpression>
       </input>
       <input id="InputClause_1f4hm3q" label="Weather conditions">
@@ -35,9 +30,6 @@
         <inputEntry id="UnaryTests_0oz6rwt">
           <text>[0..5]</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1kx2whq">
-          <text>[20..25]</text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0lfdrir">
           <text>"Cloudy","Snow"</text>
         </inputEntry>
@@ -48,9 +40,6 @@
       <rule id="DecisionRule_1z0923s">
         <inputEntry id="UnaryTests_1nftdjl">
           <text>[0..5]</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0v1f8bu">
-          <text>[20..25]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z0cu6h">
           <text>"Sunny","Rain"</text>
@@ -63,9 +52,6 @@
         <inputEntry id="UnaryTests_1bc1d7c">
           <text>[6..15]</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_10bfmw3">
-          <text>[26..30]</text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1p60882">
           <text>"Cloudy"</text>
         </inputEntry>
@@ -76,9 +62,6 @@
       <rule id="DecisionRule_0taboo3">
         <inputEntry id="UnaryTests_0guhsc0">
           <text>[16..20]</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1iuir4q">
-          <text>[31..35]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rf2jzt">
           <text>-</text>
@@ -91,11 +74,8 @@
         <inputEntry id="UnaryTests_1om57rq">
           <text>[6..12]</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1amjg4d">
-          <text>[26..30]</text>
-        </inputEntry>
         <inputEntry id="UnaryTests_00zhb0k">
-          <text>-</text>
+          <text>"Rain","Snow"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0dro4ug">
           <text>"Good"</text>
@@ -104,7 +84,7 @@
     </decisionTable>
   </decision>
   <inputData id="InputData_0i642zh" name="Weather conditions" />
-  <inputData id="InputData_0w30htm" name="Temparature" />
+  <inputData id="InputData_0w30htm" name="Temperature" />
   <inputData id="InputData_0hincqf" name="State of the bee colony" />
   <decision id="Decision_14f5wl2" name="Available honey in Kg">
     <informationRequirement id="InformationRequirement_0phx8bz">
