@@ -93,17 +93,6 @@
           <text>"Quinoa salad","Asparagus pasta","Fennel risotto","Potato and chard casserole","Pumpkin curry","Beetroot salad"</text>
         </outputValues>
       </output>
-      <rule id="DecisionRule_1epu6wf">
-        <inputEntry id="UnaryTests_1l6kr6o">
-          <text>"Early summer","Late summer"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0zmy17n">
-          <text>[1..20]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1g7pn4l">
-          <text>"Fennel risotto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_17cwnis">
         <inputEntry id="UnaryTests_0fs3g51">
           <text>"Full autumn","Late autumn"</text>
@@ -112,7 +101,7 @@
           <text>[1..20]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0e9bbhz">
-          <text>"Pumpkin curry"</text>
+          <text>"Fennel risotto"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0aptlkl">
@@ -135,6 +124,17 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1gxrx7s">
           <text>"Quinoa salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1epu6wf">
+        <inputEntry id="UnaryTests_1l6kr6o">
+          <text>"Early summer","Late summer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zmy17n">
+          <text>[1..20]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g7pn4l">
+          <text>"Pumpkin curry"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0fk6g9h">
