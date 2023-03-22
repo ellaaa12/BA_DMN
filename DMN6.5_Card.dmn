@@ -30,17 +30,45 @@
         </inputExpression>
       </input>
       <output id="output_1" label="Credit card eligibility" typeRef="boolean" />
-      <rule id="DecisionRule_0kfwegw">
-        <inputEntry id="UnaryTests_0qh7a35">
-          <text>&lt; 18</text>
+      <rule id="DecisionRule_1bmq0ge">
+        <inputEntry id="UnaryTests_0owx7tw">
+          <text>[26..30]</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1cgwumi">
+        <inputEntry id="UnaryTests_18afrsn">
+          <text>"Job seeking","Employed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r2bqr2">
           <text>-</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_00jkff9">
+        <outputEntry id="LiteralExpression_13tbd0w">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07iz6gk">
+        <inputEntry id="UnaryTests_1vylp62">
+          <text>&gt; 65</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_093m72f">
           <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0uxffgb">
+        <inputEntry id="UnaryTests_10gx7s3">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s3i6kv">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09f630k">
+        <inputEntry id="UnaryTests_0umx2sa">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0952bwm">
+          <text>"Job seeking"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11p8cjj">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qpo8zc">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -58,31 +86,17 @@
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1bmq0ge">
-        <inputEntry id="UnaryTests_0owx7tw">
-          <text>[26..30]</text>
+      <rule id="DecisionRule_0kfwegw">
+        <inputEntry id="UnaryTests_0qh7a35">
+          <text>&lt; 18</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_18afrsn">
-          <text>"Job seeking","Employed"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1r2bqr2">
+        <inputEntry id="UnaryTests_1cgwumi">
           <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_13tbd0w">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_09f630k">
-        <inputEntry id="UnaryTests_0umx2sa">
-          <text>[31..65]</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0952bwm">
-          <text>"Job seeking"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_11p8cjj">
+        <inputEntry id="UnaryTests_00jkff9">
           <text>-</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1qpo8zc">
+        <outputEntry id="LiteralExpression_0uxffgb">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -98,20 +112,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0azw239">
           <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_07iz6gk">
-        <inputEntry id="UnaryTests_1vylp62">
-          <text>&gt; 65</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_093m72f">
-          <text>-</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_10gx7s3">
-          <text>-</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1s3i6kv">
-          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -136,17 +136,6 @@
         </inputExpression>
       </input>
       <output id="OutputClause_088vd5a" label="Payment by credit card possible?" typeRef="boolean" />
-      <rule id="DecisionRule_0gl3j12">
-        <inputEntry id="UnaryTests_1hxaesi">
-          <text>true</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0pg8var">
-          <text>2.99</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03nws08">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0mti9ee">
         <inputEntry id="UnaryTests_0uzahrp">
           <text>false</text>
@@ -167,6 +156,17 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1g2o53d">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gl3j12">
+        <inputEntry id="UnaryTests_1hxaesi">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pg8var">
+          <text>2.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03nws08">
+          <text>true</text>
         </outputEntry>
       </rule>
     </decisionTable>

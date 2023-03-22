@@ -15,36 +15,12 @@
           <text>"Early spring","First spring","Full spring","Early summer","Midsummer","Late summer","Early autumn","Full autumn","Late autumn","Winter"</text>
         </outputValues>
       </output>
-      <rule id="DecisionRule_1qyzdre">
-        <inputEntry id="UnaryTests_09bzx1j">
-          <text>[1..42]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_07kn4h8">
-          <text>"Early spring"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0xirzom">
-        <inputEntry id="UnaryTests_1lwdszr">
-          <text>[43..74]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1gqwuy6">
-          <text>"First spring"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0djkrjz">
         <inputEntry id="UnaryTests_0zmk28w">
           <text>[75..103]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1sscrum">
           <text>"Full spring"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1v89kde">
-        <inputEntry id="UnaryTests_08t6r0g">
-          <text>[104..126]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0m50ae3">
-          <text>"Early summer"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10g2z2i">
@@ -55,6 +31,22 @@
           <text>"Midsummer"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1v89kde">
+        <inputEntry id="UnaryTests_08t6r0g">
+          <text>[104..126]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m50ae3">
+          <text>"Early summer"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qyzdre">
+        <inputEntry id="UnaryTests_09bzx1j">
+          <text>[1..42]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07kn4h8">
+          <text>"Early spring"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s5fdji">
         <inputEntry id="UnaryTests_139yrxt">
           <text>[174..191]</text>
@@ -63,12 +55,12 @@
           <text>"Late summer"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_19qxnf2">
-        <inputEntry id="UnaryTests_1s6psu7">
-          <text>[192..217]</text>
+      <rule id="DecisionRule_03v2vb6">
+        <inputEntry id="UnaryTests_167orcf">
+          <text>[250..268]</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1nygvv4">
-          <text>"Early autumn"</text>
+        <outputEntry id="LiteralExpression_0cuvcwr">
+          <text>"Late autumn"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0142c84">
@@ -79,12 +71,20 @@
           <text>"Full autumn"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_03v2vb6">
-        <inputEntry id="UnaryTests_167orcf">
-          <text>[250..268]</text>
+      <rule id="DecisionRule_0xirzom">
+        <inputEntry id="UnaryTests_1lwdszr">
+          <text>[43..74]</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0cuvcwr">
-          <text>"Late autumn"</text>
+        <outputEntry id="LiteralExpression_1gqwuy6">
+          <text>"First spring"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19qxnf2">
+        <inputEntry id="UnaryTests_1s6psu7">
+          <text>[192..217]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nygvv4">
+          <text>"Early autumn"</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -118,17 +118,6 @@
           <text>"Quinoa salad","Asparagus pasta","Pasta","Fennel risotto","Potato and chard casserole","Burgers with fries","Pumpkin curry","Beetroot salad","Peasant stew","Pasnip fries"</text>
         </outputValues>
       </output>
-      <rule id="DecisionRule_0fwjqwx">
-        <inputEntry id="UnaryTests_1f015kx">
-          <text>"Early spring","First spring","Full spring"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1pz1qch">
-          <text>[1..20]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1gxrx7s">
-          <text>"Quinoa salad"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0eumdb6">
         <inputEntry id="UnaryTests_0d8cxfq">
           <text>"Early spring","First spring","Full spring"</text>
@@ -140,15 +129,26 @@
           <text>"Asparagus pasta"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1py8fyw">
-        <inputEntry id="UnaryTests_08gqotb">
+      <rule id="DecisionRule_0fwjqwx">
+        <inputEntry id="UnaryTests_1f015kx">
           <text>"Early spring","First spring","Full spring"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0pnbhtu">
-          <text>[52..60]</text>
+        <inputEntry id="UnaryTests_1pz1qch">
+          <text>[1..20]</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0dvje57">
-          <text>"Pasta"</text>
+        <outputEntry id="LiteralExpression_1gxrx7s">
+          <text>"Quinoa salad"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dtzorr">
+        <inputEntry id="UnaryTests_1dszhg0">
+          <text>"Late summer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1827bfm">
+          <text>[1..20]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bni4k0">
+          <text>"Pasnip fries"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1epu6wf">
@@ -160,6 +160,17 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1g7pn4l">
           <text>"Fennel risotto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1py8fyw">
+        <inputEntry id="UnaryTests_08gqotb">
+          <text>"Early spring","First spring","Full spring"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pnbhtu">
+          <text>[52..60]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dvje57">
+          <text>"Pasta"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0aptlkl">
@@ -215,17 +226,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1bcyd50">
           <text>"Peasant stew"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0dtzorr">
-        <inputEntry id="UnaryTests_1dszhg0">
-          <text>"Late summer"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1827bfm">
-          <text>[1..20]</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1bni4k0">
-          <text>"Pasnip fries"</text>
         </outputEntry>
       </rule>
     </decisionTable>
