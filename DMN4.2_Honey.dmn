@@ -34,20 +34,6 @@
           <text>"Bad","Moderate","Good"</text>
         </outputValues>
       </output>
-      <rule id="DecisionRule_05xw5lt">
-        <inputEntry id="UnaryTests_0oz6rwt">
-          <text>[0..5]</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1kx2whq">
-          <text>[20..25]</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lfdrir">
-          <text>"Cloudy","Snow"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0j1p6g6">
-          <text>"Moderate"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0taboo3">
         <inputEntry id="UnaryTests_0guhsc0">
           <text>[16..20]</text>
@@ -74,6 +60,20 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0dro4ug">
           <text>"Good"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05xw5lt">
+        <inputEntry id="UnaryTests_0oz6rwt">
+          <text>[0..5]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kx2whq">
+          <text>[20..25]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lfdrir">
+          <text>"Cloudy","Snow"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j1p6g6">
+          <text>"Moderate"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0blxbob">
@@ -121,17 +121,6 @@
         </inputValues>
       </input>
       <output id="OutputClause_14im1ly" label="Available honey in Kg" name="Available honey in Kg" typeRef="double" />
-      <rule id="DecisionRule_1jfdibe">
-        <inputEntry id="UnaryTests_0ri3u3r">
-          <text>"Bad"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1x9vpln">
-          <text>"Moderate"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_11p0opo">
-          <text>1.3</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_143p8m6">
         <inputEntry id="UnaryTests_0rfqz8u">
           <text>"Bad"</text>
@@ -143,6 +132,17 @@
           <text>1.0</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1jfdibe">
+        <inputEntry id="UnaryTests_0ri3u3r">
+          <text>"Bad"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x9vpln">
+          <text>"Moderate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11p0opo">
+          <text>1.3</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_01b470n">
         <inputEntry id="UnaryTests_0gvmb96">
           <text>"Moderate"</text>
@@ -152,17 +152,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0u1s69i">
           <text>1.3</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_12b93ry">
-        <inputEntry id="UnaryTests_0xk6nxq">
-          <text>"Good"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1u6rdb7">
-          <text>"Bad"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_175zfth">
-          <text>1.0</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_05alpwv">
@@ -185,17 +174,6 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_08dwusl">
           <text>0.5</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_10v5v2s">
-        <inputEntry id="UnaryTests_0rgtry1">
-          <text>"Moderate"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_001vei3">
-          <text>"Moderate"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_05u7vay">
-          <text>0.8</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ozwj99">
@@ -230,20 +208,20 @@
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0l9xx7r">
-        <inputEntry id="UnaryTests_06iacep">
-          <text>1.0</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0f8gtpe">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0ae9lfn">
         <inputEntry id="UnaryTests_1ehw6xv">
           <text>0.3</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1r8prjp">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l9xx7r">
+        <inputEntry id="UnaryTests_06iacep">
+          <text>1.0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f8gtpe">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ra9w0r">
