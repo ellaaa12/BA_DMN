@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_CqNn4X5c" name="" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="14.1.1">
+  <decision id="Decision_VlmsUbuC" name="Credit card eligibility">
+    <informationRequirement id="InformationRequirement_1gapq4q">
+      <requiredInput href="#InputData_0b1i4m4" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1vmd4s4">
+      <requiredInput href="#InputData_1ono5ww" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1vdm138">
+      <requiredInput href="#InputData_05ta54g" />
+    </informationRequirement>
+    <decisionTable id="decisionTable_1">
+      <input id="InputClause_1jot5z6">
+        <inputExpression id="LiteralExpression_07qs48x" typeRef="integer">
+          <text>Age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0zowmwp">
+        <inputExpression id="LiteralExpression_0snda3t" typeRef="string">
+          <text>Employment status</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0ipfxwe">
+          <text>"Job seeking","Employed"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0uwaokc">
+        <inputExpression id="LiteralExpression_1vcgwxc" typeRef="boolean">
+          <text>Debts</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Credit card eligibility" typeRef="boolean" />
+      <rule id="DecisionRule_1v8nynz">
+        <inputEntry id="UnaryTests_19xxvgx">
+          <text>[18..25]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0meue8g">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lupkyc">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ksoaop">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bmq0ge">
+        <inputEntry id="UnaryTests_0owx7tw">
+          <text>[26..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18afrsn">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r2bqr2">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13tbd0w">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09f630k">
+        <inputEntry id="UnaryTests_0umx2sa">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0952bwm">
+          <text>"Job seeking"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11p8cjj">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qpo8zc">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kfwegw">
+        <inputEntry id="UnaryTests_0qh7a35">
+          <text>&lt; 18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cgwumi">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00jkff9">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uxffgb">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c1go6z">
+        <inputEntry id="UnaryTests_16fyut5">
+          <text>[31..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cqdqg1">
+          <text>"Employed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128o6kz">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0azw239">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0b1i4m4" name="Debts" />
+  <inputData id="InputData_1ono5ww" name="Age" />
+  <inputData id="InputData_05ta54g" name="Employment status" />
+  <decision id="Decision_0iwgyos" name="Payment by credit card possible?">
+    <informationRequirement id="InformationRequirement_0752wei">
+      <requiredDecision href="#Decision_VlmsUbuC" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0uv3h69">
+      <requiredDecision href="#Decision_1dnaa19" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0wjs2jy">
+      <input id="InputClause_0x0lvy5" label="Credit card eligibility">
+        <inputExpression id="LiteralExpression_1itiz4r" typeRef="boolean" />
+      </input>
+      <input id="InputClause_18726pt" label="Order price">
+        <inputExpression id="LiteralExpression_0z48bra" typeRef="double">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_088vd5a" label="Payment by credit card possible?" typeRef="boolean" />
+      <rule id="DecisionRule_0mti9ee">
+        <inputEntry id="UnaryTests_0uzahrp">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1he2vnr">
+          <text>2.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0smoayz">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1epok3i">
+        <inputEntry id="UnaryTests_19869t8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f5pwzn">
+          <text>6.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07pmftu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gl3j12">
+        <inputEntry id="UnaryTests_1hxaesi">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pg8var">
+          <text>2.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03nws08">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aimlc5">
+        <inputEntry id="UnaryTests_0antvwr">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yzenow">
+          <text>4.99</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g2o53d">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0bu8iih" name="Court number" />
+  <decision id="Decision_1dnaa19" name="Order price">
+    <informationRequirement id="InformationRequirement_0v15tr2">
+      <requiredInput href="#InputData_0bu8iih" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_1plomzn">
+      <input id="InputClause_12hs6yq">
+        <inputExpression id="LiteralExpression_1x86x3s" typeRef="integer">
+          <text>Court number</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_17hocbo" label="Order price" typeRef="double" />
+      <rule id="DecisionRule_02beqhg">
+        <inputEntry id="UnaryTests_1crcfdg">
+          <text>[11..20]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10dkvai">
+          <text>6.99</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03wgzly">
+        <inputEntry id="UnaryTests_1y4yh1e">
+          <text>[36..40]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tcmrng">
+          <text>22.99</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06jbira">
+        <inputEntry id="UnaryTests_1obiub7">
+          <text>[21..25]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fy0m48">
+          <text>9.99</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08ervxw">
+        <inputEntry id="UnaryTests_0pivp63">
+          <text>[26..35]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14nt662">
+          <text>12.99</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04rba6h">
+        <inputEntry id="UnaryTests_183tr2l">
+          <text>[1..5]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0em4w8h">
+          <text>2.99</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03i36ej">
+        <inputEntry id="UnaryTests_1ipxfsm">
+          <text>[6..10]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11syefc">
+          <text>4.99</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0hhj9u7">
+      <dmndi:DMNShape id="DMNShape_1yqc926" dmnElementRef="Decision_VlmsUbuC">
+        <dc:Bounds height="80" width="180" x="330" y="210" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_04n3k6u" dmnElementRef="InformationRequirement_1gapq4q">
+        <di:waypoint x="350" y="337" />
+        <di:waypoint x="390" y="310" />
+        <di:waypoint x="390" y="290" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0d3r6y9" dmnElementRef="InformationRequirement_1vmd4s4">
+        <di:waypoint x="490" y="337" />
+        <di:waypoint x="450" y="310" />
+        <di:waypoint x="450" y="290" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0o39ryg" dmnElementRef="InformationRequirement_1vdm138">
+        <di:waypoint x="282" y="250" />
+        <di:waypoint x="310" y="250" />
+        <di:waypoint x="330" y="250" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_04lgfve" dmnElementRef="InputData_0b1i4m4">
+        <dc:Bounds height="45" width="125" x="287" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0cub2zu" dmnElementRef="InputData_1ono5ww">
+        <dc:Bounds height="45" width="125" x="427" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0fbtx4k" dmnElementRef="InputData_05ta54g">
+        <dc:Bounds height="45" width="125" x="157" y="227" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0axz9bs" dmnElementRef="Decision_0iwgyos">
+        <dc:Bounds height="80" width="180" x="430" y="81" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0idxgrs" dmnElementRef="InformationRequirement_0752wei">
+        <di:waypoint x="420" y="210" />
+        <di:waypoint x="490" y="181" />
+        <di:waypoint x="490" y="161" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_01188tr" dmnElementRef="InformationRequirement_0uv3h69">
+        <di:waypoint x="610" y="210" />
+        <di:waypoint x="550" y="181" />
+        <di:waypoint x="550" y="161" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1q74f32" dmnElementRef="InputData_0bu8iih">
+        <dc:Bounds height="45" width="125" x="737" y="227" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0y0ve6e" dmnElementRef="Decision_1dnaa19">
+        <dc:Bounds height="80" width="180" x="520" y="210" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0cxeznf" dmnElementRef="InformationRequirement_0v15tr2">
+        <di:waypoint x="737" y="250" />
+        <di:waypoint x="720" y="250" />
+        <di:waypoint x="700" y="250" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
